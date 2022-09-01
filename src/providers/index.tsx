@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView } from 'react-native'
+import styled from 'styled-components/native'
 
 import ContextsProviders from '../contexts'
 import StylesProvider from '../style'
@@ -9,11 +9,15 @@ type ProvidersProps = {
 }
 
 const Providers: React.FC<ProvidersProps> = ({ children }): JSX.Element => (
-  <SafeAreaView>
-    <StylesProvider>
-      <ContextsProviders>{children}</ContextsProviders>
-    </StylesProvider>
-  </SafeAreaView>
+  <StylesProvider>
+    <ContextsProviders>
+      <Container>{children}</Container>
+    </ContextsProviders>
+  </StylesProvider>
 )
+
+const Container = styled.SafeAreaView`
+  flex: 1;
+`
 
 export default Providers

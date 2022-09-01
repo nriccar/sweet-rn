@@ -9,7 +9,11 @@ import App from '../screens/app'
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
         <Stack.Screen name="App" component={App} />
       </Stack.Navigator>
     </NavigationContainer>

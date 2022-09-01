@@ -3,9 +3,7 @@ import React from 'react'
 import Navigation from './navigation'
 import Providers from './providers'
 
-type AppProps = {}
-
-const App: React.FC<AppProps> = ({}): JSX.Element => {
+const App: React.FC = (): JSX.Element => {
   return (
     <Providers>
       <Navigation />
