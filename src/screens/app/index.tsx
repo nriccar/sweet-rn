@@ -2,6 +2,8 @@ import * as React from 'react'
 import styled from 'styled-components/native'
 import { StackScreenProps } from '@react-navigation/stack'
 
+import { translate } from '../../locale'
+
 import Typography from '../../components/typography'
 import Log from '../../utils/log'
 
@@ -10,12 +12,14 @@ type AppProps = {
   route?: StackScreenProps<{ App: {} }, 'App'>['route']
 }
 
-const App: React.FC<AppProps> = ({ navigation, route }): JSX.Element => {
+const App: React.FC<AppProps> = (): JSX.Element => {
   Log('App', 'success')
 
   return (
     <Container>
-      <Title variant="title">Hello World!</Title>
+      <Title variant="title">
+        {translate('hello')} {translate('world')}
+      </Title>
     </Container>
   )
 }

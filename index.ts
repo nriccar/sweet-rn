@@ -1,6 +1,6 @@
 /**
  * Welcome to Sweet React Native
- * A template for React Native featuring Typescript, Context, Styled Components, Jest and Cypress
+ * A template for React Native featuring Typescript, Context, Styled Components, Jest
  */
 
 import { AppRegistry } from 'react-native'

@@ -1,0 +1,6 @@
+{
+  "hello": "Hola",
+  "world": "Mundo",
+
+  "hello_world": "{0} {1}"
+}
