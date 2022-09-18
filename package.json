@@ -12,7 +12,7 @@
     "url": "git+https://github.com/nriccar/sweet-rn"
   },
   "version": "0.0.2",
-  "private": true,
+  "private": false,
   "scripts": {
     "adb": "adb reverse tcp:8081 tcp:8081",
     "start": "react-native start",
