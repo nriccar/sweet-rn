@@ -84,7 +84,7 @@
       "node"
     ]
   },
-  "lint-saged": {
+  "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "npm run validate"
     ]

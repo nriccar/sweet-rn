@@ -34,7 +34,7 @@
         "react-hooks/exhaustive-deps": "off",
         "space-infix-ops": "off",
         "no-shadow": "off",
-        "no-undef": "off",
+        "no-undef": "error",
         "semi": "off",
         "no-unused-vars": "off"
       }
