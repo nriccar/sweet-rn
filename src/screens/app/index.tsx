@@ -16,7 +16,7 @@ const App: React.FC<AppProps> = (): JSX.Element => {
   Log('App', 'success')
 
   return (
-    <Container>
+    <Container test={true}>
       <Title variant="title">
         {translate('hello')} {translate('world')}
       </Title>
@@ -24,9 +24,12 @@ const App: React.FC<AppProps> = (): JSX.Element => {
   )
 }
 
-const Container = styled.View`
+type ContainerProps = {
+  test: boolean
+}
+const Container = styled.View<ContainerProps>`
   background-color: ${({ theme }) => theme.palette.brand};
-  flex: 1;
+  flex: ${({ test }) => (test ? 1 : 0.5)};
 `
 
 const Title = styled(Typography)`

@@ -1,6 +1,6 @@
 {
   "name": "sweetrn",
-  "description": "Sweet React Native is a template for react native featuring Typescript, Context, Styled Components, Jest.",
+  "description": "Sweet React Native is a template for react native featuring Multi-language, Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more.",
   "author": "Nicolás Riccardi",
   "keywords": [
     "react-native",
@@ -63,8 +63,13 @@
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-detox": "^1.0.0",
+    "husky": "^8.0.1",
     "jest": "^26.6.3",
+    "lint-staged": "^13.0.3",
     "metro-react-native-babel-preset": "^0.70.3",
+    "prettier": "^2.7.1",
     "react-test-renderer": "18.0.0",
     "typescript": "^4.4.4"
   },
@@ -77,6 +82,11 @@
       "jsx",
       "json",
       "node"
+    ]
+  },
+  "lint-saged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run validate"
     ]
   }
 }

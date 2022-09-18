@@ -1,20 +1,48 @@
 {
   "root": true,
-  "extends": ["@react-native-community", "plugin:react/jsx-runtime"],
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2021": true,
+    "react-native/react-native": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "@react-native-community",
+    "plugin:react/jsx-runtime",
+    "plugin:react/recommended",
+    "prettier",
+    "eslint:recommended",
+    "plugin:jest/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-native", "@typescript-eslint"],
+  "ignorePatterns": ["!.*", "dist", "node_modules", ".history"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {
         "@typescript-eslint/no-shadow": ["error"],
+        "@typescript-eslint/no-unused-vars": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "space-infix-ops": "off",
         "no-shadow": "off",
         "no-undef": "off",
         "semi": "off",
-        "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": "warn",
-        "react-hooks/exhaustive-deps": "off"
+        "no-unused-vars": "off"
       }
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
