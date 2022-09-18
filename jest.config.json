@@ -1,6 +1,6 @@
 {
   "modulePathIgnorePatterns": ["<rootDir>/.history/"],
-  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+  "testRegex": "(src/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
   "preset": "react-native",
   "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"]
 }

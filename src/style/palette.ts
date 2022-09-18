@@ -1,7 +1,5 @@
 export const palette = {
-  brand: '#387ef5',
-  brandLight: '#11c1f3',
-  alternative: '#33eccb',
+  brand: ['#f6b033', '#ea4c1a', '#c2471b'],
 
   whites: [
     '#ffffff',
@@ -18,6 +16,7 @@ export const palette = {
     '#333333',
     'rgba(0,0,0,.5)',
     'rgba(0,0,0,.3)',
+    'rgba(0,0,0,.1)',
   ],
 
   success: '#33cd5f',

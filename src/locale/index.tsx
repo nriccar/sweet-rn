@@ -4,14 +4,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import en from './en.json'
 import es from './es.json'
 
-type Language = 'en' | 'es'
+export type Language = 'en' | 'es'
 
-const locales = new LocalizedStrings({
+export const locales = new LocalizedStrings({
   en,
   es,
 })
 
-export const changeLanguage = (languageKey: Language) => {
+export const changeLanguage = (languageKey: Language | string) => {
   locales.setLanguage(languageKey)
   AsyncStorage.setItem('@language', languageKey)
 }

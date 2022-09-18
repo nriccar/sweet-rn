@@ -4,7 +4,7 @@
 
   "hello_world": "{0} {1}!",
 
-  "welcome": "Bienvenido a {0}!",
+  "welcome": "Bienvenido a",
   "app_name": "Sweet React Native",
   "description": "Un template para react-native que incluye multi-idioma, Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, y más."
 }

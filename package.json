@@ -20,10 +20,18 @@
     "test:unit": "jest --coverage ./test/unit",
     "test:integration": "jest --coverage ./test/integration",
     "test:watch": "jest --coverage --watch",
+    "test:staged": "jest --coverage --bail --findRelatedTests",
+    "e2e:ios:test": "detox test -c ios.release",
+    "e2e:ios:build": "detox build -c ios.release",
+    "e2e:ios": "npm run e2e:ios:build && npm run e2e:ios:test",
+    "e2e:android:test": "detox test -c android.release",
+    "e2e:android:build": "detox build -c android.release",
+    "e2e:android": "npm run e2e:android:build && npm run e2e:android:test",
+    "e2e": "npm run e2e:ios && npm run e2e:android",
     "lint": "eslint \"src/**/*.+(js|jsx|json|ts|tsx)\"",
     "format": "npm run prettier -- --write",
     "prettier": "prettier \"src/**/*.+(js|jsx|json|ts|tsx)\"",
-    "validate": "npm t && npm run lint && npm run format",
+    "validate": "npm run lint && npm run format && npm run test:staged",
     "": "",
     "packages:check-updates": "ncu",
     "packages:check-unused": "npx depcheck",
@@ -32,13 +40,17 @@
     "cache:clear": "rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/haste-* && watchman watch-del-all",
     "reinstall": "rm -rf node_modules && rm -rf package-lock.json && rm -rf ios/Pods && rm -rf ios/Podfile.lock && npm install --force && npx pod-install && npm run bundle:ios && npm run bundle:android && npm start --reset-cache",
     "bundle:ios": "react-native bundle --entry-file ./index.js --platform ios --bundle-output ios/main.jsbundle --assets-dest ios",
-    "bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/"
+    "bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
+    " ": " ",
+    "git:push": "func() { git push; }; func",
+    "deploy": "npm version patch && npm publish && npm run git:push"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.10",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/stack": "^6.2.3",
+    "jest-circus": "^29.0.3",
     "lottie-react-native": "^5.1.4",
     "react": "18.0.0",
     "react-error-boundary": "^3.1.4",
@@ -59,7 +71,9 @@
     "@testing-library/jest-native": "^4.0.11",
     "@testing-library/react-native": "^11.0.0",
     "@tsconfig/react-native": "^2.0.2",
-    "@types/jest": "^26.0.23",
+    "@types/detox": "^18.1.0",
+    "@types/jasmine": "^4.3.0",
+    "@types/jest": "^26.0.24",
     "@types/node": "^18.7.14",
     "@types/react-native": "^0.69.5",
     "@types/react-test-renderer": "^18.0.0",
@@ -69,15 +83,18 @@
     "@typescript-eslint/parser": "^5.29.0",
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
+    "detox": "^19.12.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-detox": "^1.0.0",
     "husky": "^8.0.1",
+    "jasmine": "^4.4.0",
     "jest": "^26.6.3",
     "lint-staged": "^13.0.3",
     "metro-react-native-babel-preset": "^0.70.3",
     "prettier": "^2.7.1",
     "react-test-renderer": "18.0.0",
+    "ts-jest": "^26.5.6",
     "typescript": "^4.4.4"
   },
   "jest": {
@@ -95,5 +112,18 @@
     "*.{js,jsx,ts,tsx}": [
       "npm run validate"
     ]
+  },
+  "detox": {
+    "testRunner": "jest",
+    "runnerConfig": "e2e/config.json",
+    "skipLegacyWorkersInjection": true,
+    "configurations": {
+      "ios.release": {
+        "binaryPath": "./ios/build/Build/Products/Release-iphonesimulator/sweetrn.app",
+        "build": "xcodebuild -workspace ios/sweetrn.xcworkspace -configuration release -scheme sweetrn -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 14 Pro"
+      }
+    }
   }
 }

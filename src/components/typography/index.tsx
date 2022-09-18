@@ -10,6 +10,12 @@ import styled from 'styled-components/native'
 
 const title = styled.Text`
   font-size: 24px;
+  font-family: 'Montserrat-Black';
+  color: ${({ theme }) => theme.palette.blacks[2]};
+`
+
+const subtitle = styled.Text`
+  font-size: 24px;
   font-family: 'Montserrat-Bold';
   color: ${({ theme }) => theme.palette.blacks[2]};
 `
@@ -22,7 +28,7 @@ const body = styled.Text`
 
 const button = styled.Text`
   font-size: 18px;
-  font-family: 'Montserrat-Black';
+  font-family: 'Montserrat-Bold';
   color: ${({ theme }) => theme.palette.blacks[2]};
 `
 
@@ -30,6 +36,7 @@ const TypographyVariants = {
   title,
   body,
   button,
+  subtitle,
 }
 
 type TypographyProps = {

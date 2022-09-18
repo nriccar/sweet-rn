@@ -5,17 +5,35 @@ import styled from 'styled-components/native'
 import { AnyStyledComponent } from 'styled-components'
 import { StackScreenProps } from '@react-navigation/stack'
 
-import { translate } from '@swrn/locale'
+import { changeLanguage, getLanguage, translate } from '@swrn/locale'
+import { useLanguage } from '@swrn/contexts/language'
 
 import Typography from '@swrn/components/typography'
-import Log from '@swrn/utils/log'
 
 type AppProps = {
   navigation?: StackScreenProps<{ App: {} }, 'App'>['navigation']
   route?: StackScreenProps<{ App: {} }, 'App'>['route']
 }
 
+type Language = {
+  value: string
+  label: string
+}
+
+const languages: Language[] = [
+  {
+    value: 'en',
+    label: 'English',
+  },
+  {
+    value: 'es',
+    label: 'Español',
+  },
+]
+
 const App: React.FC<AppProps> = (): JSX.Element => {
+  const [, setLanguage] = useLanguage()
+
   return (
     <Container>
       <RockerContainer>
@@ -28,9 +46,24 @@ const App: React.FC<AppProps> = (): JSX.Element => {
       </RockerContainer>
 
       <TextsContainer>
-        <Title variant="title">{translate('welcome', ['app_name'])}</Title>
+        <Title variant="subtitle">{translate('welcome')}</Title>
+        <Title variant="title">{translate('app_name')}</Title>
         <Description variant="body">{translate('description')}</Description>
       </TextsContainer>
+
+      <LanguagesContainer>
+        {languages.map(({ value, label }) => (
+          <LanguageButton
+            key={`app-languages-button-${label}`}
+            onPress={() => {
+              changeLanguage(value)
+              setLanguage(value)
+            }}
+          >
+            <LanguageText variant="button">{label}</LanguageText>
+          </LanguageButton>
+        ))}
+      </LanguagesContainer>
     </Container>
   )
 }
@@ -43,7 +76,7 @@ const Container = styled.View`
   padding: 0 20px;
 `
 
-const RockerContainer = styled.View`
+const RockerContainer = styled.TouchableOpacity`
   flex: 2;
   justify-content: center;
   align-items: center;
@@ -64,6 +97,25 @@ const Title = styled(Typography)`
 const Description = styled(Typography)`
   text-align: center;
   margin-top: 15px;
+`
+
+const LanguagesContainer = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0.3;
+`
+
+const LanguageButton = styled.TouchableOpacity`
+  margin: 0 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: ${({ theme }) => theme.palette.brand[0]};
+  box-shadow: 0 3px 5px ${({ theme }) => theme.palette.blacks[5]};
+`
+
+const LanguageText = styled(Typography)`
+  color: ${({ theme }) => theme.palette.whites[0]};
 `
 
 export default App

@@ -1,0 +1,7 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "setupFilesAfterEnv": ["./init.ts"],
+  "roots": ["../src/__e2e__"],
+  "testRegex": "(/__e2e__/.*|(\\.|/)(test|spec))\\.tsx?$"
+}

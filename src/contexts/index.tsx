@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { LanguageProvider } from './language'
 import { ModalProvider } from './modal'
 
 type ContextsProvidersProps = {
@@ -8,6 +9,10 @@ type ContextsProvidersProps = {
 
 const ContextsProviders: React.FC<ContextsProvidersProps> = ({
   children,
-}): JSX.Element => <ModalProvider>{children}</ModalProvider>
+}): JSX.Element => (
+  <ModalProvider>
+    <LanguageProvider>{children}</LanguageProvider>
+  </ModalProvider>
+)
 
 export default ContextsProviders
