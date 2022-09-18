@@ -19,5 +19,6 @@ it('renders correctly', () => {
     </StylesProvider>,
   )
 
-  expect(getByText(/hello world/i)).toBeTruthy()
+  expect(getByText(/welcome/i)).toBeTruthy()
+  expect(getByText(/description/i)).toBeTruthy()
 })

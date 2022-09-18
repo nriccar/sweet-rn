@@ -9,15 +9,21 @@ import styled from 'styled-components/native'
  */
 
 const title = styled.Text`
-  font-size: 32px;
+  font-size: 24px;
+  font-family: 'Montserrat-Bold';
+  color: ${({ theme }) => theme.palette.blacks[2]};
 `
 
 const body = styled.Text`
   font-size: 16px;
+  font-family: 'Montserrat-Light';
+  color: ${({ theme }) => theme.palette.blacks[2]};
 `
 
 const button = styled.Text`
-  font-size: 18;
+  font-size: 18px;
+  font-family: 'Montserrat-Black';
+  color: ${({ theme }) => theme.palette.blacks[2]};
 `
 
 const TypographyVariants = {
@@ -49,7 +55,7 @@ const Typography: React.FC<TypographyProps> = ({
     : children
 
   return (
-    <Text className={className} {...{ ...rest }}>
+    <Text className={className} {...{ ...rest }} allowFontScaling={false}>
       {text?.toString()}
     </Text>
   )

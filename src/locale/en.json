@@ -2,5 +2,9 @@
   "hello": "Hello",
   "world": "World",
 
-  "hello_world": "{0} {1}"
+  "hello_world": "{0} {1}!",
+
+  "welcome": "Welcome to {0}!",
+  "app_name": "Sweet React Native",
+  "description": "A template for react native featuring Multi-language, Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more."
 }

@@ -1,11 +1,14 @@
 import * as React from 'react'
+
+import Lottie from 'lottie-react-native'
 import styled from 'styled-components/native'
+import { AnyStyledComponent } from 'styled-components'
 import { StackScreenProps } from '@react-navigation/stack'
 
-import { translate } from '../../locale'
+import { translate } from '@swrn/locale'
 
-import Typography from '../../components/typography'
-import Log from '../../utils/log'
+import Typography from '@swrn/components/typography'
+import Log from '@swrn/utils/log'
 
 type AppProps = {
   navigation?: StackScreenProps<{ App: {} }, 'App'>['navigation']
@@ -13,27 +16,54 @@ type AppProps = {
 }
 
 const App: React.FC<AppProps> = (): JSX.Element => {
-  Log('App', 'success')
-
   return (
-    <Container test={true}>
-      <Title variant="title">
-        {translate('hello')} {translate('world')}
-      </Title>
+    <Container>
+      <RockerContainer>
+        <Rocket
+          source={require('@swrn/assets/lottie/rocket.json')}
+          resizeMode="contain"
+          autoPlay
+          loop
+        />
+      </RockerContainer>
+
+      <TextsContainer>
+        <Title variant="title">{translate('welcome', ['app_name'])}</Title>
+        <Description variant="body">{translate('description')}</Description>
+      </TextsContainer>
     </Container>
   )
 }
 
-type ContainerProps = {
-  test: boolean
-}
-const Container = styled.View<ContainerProps>`
-  background-color: ${({ theme }) => theme.palette.brand};
-  flex: ${({ test }) => (test ? 1 : 0.5)};
+const Container = styled.View`
+  background-color: ${({ theme }) => theme.palette.whites[4]};
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+`
+
+const RockerContainer = styled.View`
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+`
+
+const Rocket = styled(Lottie as unknown as AnyStyledComponent)`
+  height: 450px;
+`
+
+const TextsContainer = styled.View`
+  flex: 1;
 `
 
 const Title = styled(Typography)`
-  color: ${({ theme }) => theme.palette.whites[0]};
+  text-align: center;
+`
+
+const Description = styled(Typography)`
+  text-align: center;
+  margin-top: 15px;
 `
 
 export default App
