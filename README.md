@@ -5,7 +5,7 @@
   <br>
 </h1>
 
-<p align="center">Sweet React Native is a template for react native featuring Multi-language, Dark-Light Themes, Typescript, Context, <br> Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more.</p>
+<p align="center">Sweet React Native is a template for react native featuring Multi-language, Dark-Light Themes, Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more.</p>
 
 <br>
 
