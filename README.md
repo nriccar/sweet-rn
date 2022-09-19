@@ -8,9 +8,9 @@
 </h1>
 
 <h2 align="center">
-<img src="https://img.shields.io/badge/License-MIT-green.svg" width="100" />
 &middot;
 <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" width="100" />
+&middot;
 </h2>
 
 <p align="center">Sweet React Native is a template for react native featuring Multi-language, Dark-Light Themes, Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more.</p>
