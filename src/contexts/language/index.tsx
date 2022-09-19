@@ -17,7 +17,6 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = (
   const [language, setLanguage] = useState<string>('en')
 
   useEffect(() => {
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.linear)
     changeLanguage(language)
   }, [language])
 
