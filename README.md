@@ -9,8 +9,8 @@
 
 <br>
 
-<p align="center">
-    <img src="./src/assets/demo.gif" width="350" />
+<p align="center"> 
+https://user-images.githubusercontent.com/49196314/191018962-41ad61a8-ab50-4aa7-abfe-76e794e81f48.mp4
 </p>
 
 <br>
