@@ -1,21 +1,17 @@
 <h1 align="center">
   🚀
-  
   <br>
-    Sweet React Native
-  <br>
-  
+  Sweet React Native
 </h1>
+<p align="center">
+  Sweet React Native is a template for react native featuring Multi-language, Dark-Light Themes, <br> Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more.
+</p>
 
-<h2 align="center">
-&middot;
-<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" width="100" />
-&middot;
-</h2>
-
-<p align="center">Sweet React Native is a template for react native featuring Multi-language, Dark-Light Themes, Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more.</p>
 <br>
-
+<div align="center">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" width="100" />
+</div>
+<br>
 <p align="center">
   • <a href="https://www.youtube.com/shorts/-fnGqfFWh2k">Video Demo</a> •
 </p>
@@ -27,8 +23,6 @@
 
 <br>
 <br>
-<br>
-<br>
 <p align="center">
     🚧
     <br>
@@ -36,6 +30,7 @@
     <br>
      🚧
 </p>
+<br>
 
 ## 📚 Table of Contents
 
