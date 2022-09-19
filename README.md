@@ -37,8 +37,6 @@
      🚧
 </p>
 
----
-
 ## 📚 Table of Contents
 
 - [Installation](#installation)
@@ -51,8 +49,6 @@
   - [Change the language](#change-language)
   - [Get current language](#get-current-language)
 - [Themes](#themes)
-
----
 
 ## Installation
 
@@ -72,15 +68,11 @@ cd ios
 pod install
 ```
 
----
-
 ## Run project
 
 #### Available Scripts
 
 - npm start - start metro bundler (react-native start)
-
----
 
 ## Renaming project
 
@@ -89,14 +81,10 @@ One of the tickets on the roadmap of this template is adding it as a template to
 
 For the time being, just rename with react-native-rename and you will be good to go.
 
----
-
 ## Imports
 
 Absolute imports are configured in `tsconfig.json` and `babel.config.js`. You can import whatever you want from `src` folder using the alias `@swrn` - `@swrn/components` for example.
 If you want to change this alias, refer to `tsconfig.json` and `babel.config.js` file.
-
----
 
 ## Languages
 
@@ -171,8 +159,6 @@ Also, there's a `getAvailableLanguages` function that returns an array of string
 import { getAvailableLanguages } from '@swrn/locale'
 const availableLanguages = getAvailableLanguages() // [en, es]
 ```
-
----
 
 ## Themes
 
