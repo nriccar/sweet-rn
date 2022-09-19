@@ -205,6 +205,7 @@ const handleThemeChange = (value: boolean) => {
 
 <br>
 <br>
+
 ## 🚧 Roadmap 🚧
 
 - Add to the react-native cli command, so that you can `npx react-native init myPackageName --template sweet-rn`.
