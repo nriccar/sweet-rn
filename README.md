@@ -10,7 +10,7 @@
 <br>
 
 <p align="center">
-    <img src="./src/assets/demo.gif" width="400" />
+  ![sweet-rn-demo-gif](https://media.giphy.com/media/eXfSE84lVHQjgIPkec/giphy.gif)
 </p>
 
 <br>
