@@ -209,4 +209,4 @@ const handleThemeChange = (value: boolean) => {
 
 - Add to the react-native cli command, so that you can `npx react-native init myPackageName --template sweet-rn`.
 - Fix the `useLanguage` hook, so that it doesn't require the `changeLanguage` function.
-- Document providers, context, hooks, components, etc.
+- Document providers, context, hooks, components, eslint, husky, prettier.
