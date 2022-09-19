@@ -10,7 +10,7 @@
 <br>
 
 <p align="center"> 
-    <img src="https://user-images.githubusercontent.com/49196314/191018962-41ad61a8-ab50-4aa7-abfe-76e794e81f48.mp4" width="350" />
+  ![demo_AdobeExpress](https://user-images.githubusercontent.com/49196314/191019450-09a8871a-2f8b-4b5d-bbae-4ca9c62883eb.gif)
 </p>
 
 <br>
