@@ -10,7 +10,12 @@
 <br>
 
 <p align="center">
-    <img src="./src/assets/demo.gif" width="350" />
+  • <a href="https://www.youtube.com/shorts/-fnGqfFWh2k">Video Demo</a> •
+</p>
+
+<p align="center">
+    <img src="./src/assets/demo-dark.png" width="350" />
+    <img src="./src/assets/demo-light.png" width="350" />
 </p>
 
 <br>
