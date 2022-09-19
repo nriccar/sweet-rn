@@ -10,7 +10,7 @@
 <br>
 
 <p align="center"> 
-  ![demo_AdobeExpress](https://user-images.githubusercontent.com/49196314/191019450-09a8871a-2f8b-4b5d-bbae-4ca9c62883eb.gif)
+    <img src="./src/assets/demo.gif" width="350" />
 </p>
 
 <br>
