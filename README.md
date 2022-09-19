@@ -175,6 +175,30 @@ const [theme, setTheme] = useTheme()
 
 You will find the palettes for each theme on `src/style/palette`. Note that there's a `defaultPalette` object for the shared colors between the themes.
 
+There's also an example of a Switch component on `src/screens/app`.
+
+```jsx
+import Switch from '@swrn/components/switch'
+
+import sun from '@swrn/assets/icons/sun.png'
+import moon from '@swrn/assets/icons/moon.png'
+
+[...]
+
+const handleThemeChange = (value: boolean) => {
+  setTheme(value ? 'light' : 'dark')
+}
+
+[...]
+
+<Switch
+  thumbImages={[sun, moon]}
+  onSwitch={handleThemeChange}
+  trackColors={['#767577', '#f5dd4b']}
+  thumbColors={['#767577', '#f4f3f4']}
+/>
+```
+
 <!-- | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `api_key` | `string` | **Required**. Your API key | -->
@@ -185,3 +209,4 @@ You will find the palettes for each theme on `src/style/palette`. Note that ther
 
 - Add to the react-native cli command, so that you can `npx react-native init myPackageName --template sweet-rn`.
 - Fix the `useLanguage` hook, so that it doesn't require the `changeLanguage` function.
+- Document providers, context, hooks, components, etc.
