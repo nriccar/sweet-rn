@@ -1,4 +1,4 @@
-export const palette = {
+const defaultPalette = {
   brand: ['#f6b033', '#ea4c1a', '#c2471b'],
 
   whites: [
@@ -26,4 +26,17 @@ export const palette = {
   dark: '#444444',
 
   transparent: 'transparent',
+}
+
+export const palette = {
+  light: {
+    ...defaultPalette,
+    background: defaultPalette.whites[4],
+    text: defaultPalette.blacks[3],
+  },
+  dark: {
+    ...defaultPalette,
+    background: defaultPalette.blacks[2],
+    text: defaultPalette.whites[0],
+  },
 }

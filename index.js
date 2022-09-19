@@ -1,6 +1,6 @@
 /**
  * Welcome to Sweet React Native
- * A template for React Native featuring Multi-language, Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more.
+ * A template for React Native featuring Multi-language, Dark-Light Themes, Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more.
  */
 
 import { AppRegistry } from 'react-native'

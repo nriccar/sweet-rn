@@ -5,10 +5,15 @@ import styled from 'styled-components/native'
 import { AnyStyledComponent } from 'styled-components'
 import { StackScreenProps } from '@react-navigation/stack'
 
-import { changeLanguage, getLanguage, translate } from '@swrn/locale'
+import { changeLanguage, translate } from '@swrn/locale'
 import { useLanguage } from '@swrn/contexts/language'
+import { useTheme } from '@swrn/contexts/theme'
 
 import Typography from '@swrn/components/typography'
+import Switch from '@swrn/components/switch'
+
+import sun from '@swrn/assets/icons/sun.png'
+import moon from '@swrn/assets/icons/moon.png'
 
 type AppProps = {
   navigation?: StackScreenProps<{ App: {} }, 'App'>['navigation']
@@ -25,6 +30,7 @@ const languages: Language[] = [
     value: 'en',
     label: 'English',
   },
+
   {
     value: 'es',
     label: 'Español',
@@ -34,15 +40,26 @@ const languages: Language[] = [
 const App: React.FC<AppProps> = (): JSX.Element => {
   const [, setLanguage] = useLanguage()
 
+  const handleLanguageChange = (value: 'en' | 'es') => {
+    changeLanguage(value)
+    setLanguage(value)
+  }
+
+  const [theme, setTheme] = useTheme()
+
+  const handleThemeChange = (value: boolean) => {
+    setTheme(value ? 'light' : 'dark')
+  }
+
+  const rocket =
+    theme === 'light'
+      ? require('@swrn/assets/lottie/rocket.json')
+      : require('@swrn/assets/lottie/rocket_dark.json')
+
   return (
     <Container>
       <RockerContainer>
-        <Rocket
-          source={require('@swrn/assets/lottie/rocket.json')}
-          resizeMode="contain"
-          autoPlay
-          loop
-        />
+        <Rocket source={rocket} resizeMode="contain" autoPlay loop />
       </RockerContainer>
 
       <TextsContainer>
@@ -51,25 +68,31 @@ const App: React.FC<AppProps> = (): JSX.Element => {
         <Description variant="body">{translate('description')}</Description>
       </TextsContainer>
 
-      <LanguagesContainer>
-        {languages.map(({ value, label }) => (
-          <LanguageButton
-            key={`app-languages-button-${label}`}
-            onPress={() => {
-              changeLanguage(value)
-              setLanguage(value)
-            }}
-          >
-            <LanguageText variant="button">{label}</LanguageText>
-          </LanguageButton>
-        ))}
-      </LanguagesContainer>
+      <ButtonsContainer>
+        <Switch
+          thumbImages={[sun, moon]}
+          onSwitch={handleThemeChange}
+          trackColors={['#767577', '#f5dd4b']}
+          thumbColors={['#81b0ff', '#f4f3f4']}
+        />
+
+        <LanguagesContainer>
+          {languages.map(({ value, label }) => (
+            <LanguageButton
+              key={`app-languages-button-${label}`}
+              onPress={() => handleLanguageChange(value as 'en' | 'es')}
+            >
+              <LanguageText variant="button">{label}</LanguageText>
+            </LanguageButton>
+          ))}
+        </LanguagesContainer>
+      </ButtonsContainer>
     </Container>
   )
 }
 
 const Container = styled.View`
-  background-color: ${({ theme }) => theme.palette.whites[4]};
+  background-color: ${({ theme }) => theme.palette.background};
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -77,7 +100,7 @@ const Container = styled.View`
 `
 
 const RockerContainer = styled.TouchableOpacity`
-  flex: 2;
+  flex: 0.5;
   justify-content: center;
   align-items: center;
 `
@@ -87,7 +110,7 @@ const Rocket = styled(Lottie as unknown as AnyStyledComponent)`
 `
 
 const TextsContainer = styled.View`
-  flex: 1;
+  flex: 0.3;
 `
 
 const Title = styled(Typography)`
@@ -99,11 +122,14 @@ const Description = styled(Typography)`
   margin-top: 15px;
 `
 
+const ButtonsContainer = styled.View`
+  flex: 0.2;
+  align-items: center;
+`
+
 const LanguagesContainer = styled.View`
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex: 0.3;
+  margin-bottom: 30px;
 `
 
 const LanguageButton = styled.TouchableOpacity`

@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "@swrn/*": ["src/*/index", "src/*"]
+      "@swrn/*": ["src/*/index", "src/*", "src/**/*"]
     },
     "noEmit": true,
     "resolveJsonModule": true,

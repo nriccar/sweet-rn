@@ -1,7 +1,10 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components/native'
 
-import { theme } from './theme'
+import { useTheme } from '@swrn/contexts/theme'
+
+import { palette } from './palette'
+import { StatusBar } from 'react-native'
 
 type StylesProviderProps = {
   children: JSX.Element
@@ -9,6 +12,23 @@ type StylesProviderProps = {
 
 const StylesProvider: React.FC<StylesProviderProps> = ({
   children,
-}): JSX.Element => <ThemeProvider theme={theme}>{children}</ThemeProvider>
+}): JSX.Element => {
+  const [selectedTheme] = useTheme()
+
+  const theme = {
+    selected: selectedTheme,
+    palette: palette[selectedTheme],
+  }
+
+  return (
+    <ThemeProvider theme={theme}>
+      <StatusBar
+        backgroundColor={selectedTheme === 'light' ? '#fff' : '#000'}
+        barStyle={selectedTheme === 'light' ? 'dark-content' : 'light-content'}
+      />
+      {children}
+    </ThemeProvider>
+  )
+}
 
 export default StylesProvider

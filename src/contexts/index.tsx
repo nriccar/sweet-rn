@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { ThemeProvider } from './theme'
 import { LanguageProvider } from './language'
 import { ModalProvider } from './modal'
 
@@ -11,7 +12,9 @@ const ContextsProviders: React.FC<ContextsProvidersProps> = ({
   children,
 }): JSX.Element => (
   <ModalProvider>
-    <LanguageProvider>{children}</LanguageProvider>
+    <LanguageProvider>
+      <ThemeProvider>{children}</ThemeProvider>
+    </LanguageProvider>
   </ModalProvider>
 )
 

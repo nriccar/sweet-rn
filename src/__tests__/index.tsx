@@ -1,16 +1,20 @@
 import * as React from 'react'
 import { render } from '@testing-library/react-native'
 
-import App from '../screens/app'
-import StylesProvider from '../style'
-
-import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock'
+import App from '@swrn/screens/app'
+import StylesProvider from '@swrn/style'
 
 jest.mock('../locale', () => ({
   translate: jest.fn(key => key),
 }))
 jest.mock('react-native-localization')
-jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage)
+jest.mock('@react-native-async-storage/async-storage', () => {
+  return {
+    getItem: async (...args: any) => args,
+    setItem: async (...args: any) => args,
+    removeItem: async (...args: any) => args,
+  }
+})
 
 it('renders correctly', () => {
   const { getByText } = render(

@@ -1,4 +1,5 @@
 import React from 'react'
+import { StatusBar } from 'react-native'
 import styled from 'styled-components/native'
 
 import ContextsProviders from '../contexts'
@@ -9,15 +10,16 @@ type ProvidersProps = {
 }
 
 const Providers: React.FC<ProvidersProps> = ({ children }): JSX.Element => (
-  <StylesProvider>
-    <ContextsProviders>
+  <ContextsProviders>
+    <StylesProvider>
       <Container>{children}</Container>
-    </ContextsProviders>
-  </StylesProvider>
+    </StylesProvider>
+  </ContextsProviders>
 )
 
 const Container = styled.SafeAreaView`
   flex: 1;
+  background-color: ${({ theme }) => theme.palette.background};
 `
 
 export default Providers

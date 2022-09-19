@@ -1,8 +1,9 @@
 import 'styled-components/native'
-import { theme } from './theme'
-
-type Theme = typeof theme
+import { palette } from './palette'
+import { Theme } from '@swrn/contexts/theme'
 
 declare module 'styled-components' {
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme {
+    palette: typeof palette[Theme]
+  }
 }

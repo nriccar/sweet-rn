@@ -1,13 +1,6 @@
-import { changeLanguage, getLanguage, locales } from '@swrn/locale'
+import { changeLanguage } from '@swrn/locale'
 import React, { createContext, useEffect, useState } from 'react'
-import { LayoutAnimation, UIManager, Platform } from 'react-native'
-
-if (
-  Platform.OS === 'android' &&
-  UIManager.setLayoutAnimationEnabledExperimental
-) {
-  UIManager.setLayoutAnimationEnabledExperimental(true)
-}
+import { LayoutAnimation } from 'react-native'
 
 type ILanguageContext = [string, React.Dispatch<React.SetStateAction<string>>]
 

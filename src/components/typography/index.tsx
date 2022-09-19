@@ -11,25 +11,25 @@ import styled from 'styled-components/native'
 const title = styled.Text`
   font-size: 24px;
   font-family: 'Montserrat-Black';
-  color: ${({ theme }) => theme.palette.blacks[2]};
+  color: ${({ theme }) => theme.palette.text};
 `
 
 const subtitle = styled.Text`
   font-size: 24px;
   font-family: 'Montserrat-Bold';
-  color: ${({ theme }) => theme.palette.blacks[2]};
+  color: ${({ theme }) => theme.palette.text};
 `
 
 const body = styled.Text`
   font-size: 16px;
   font-family: 'Montserrat-Light';
-  color: ${({ theme }) => theme.palette.blacks[2]};
+  color: ${({ theme }) => theme.palette.text};
 `
 
 const button = styled.Text`
   font-size: 18px;
   font-family: 'Montserrat-Bold';
-  color: ${({ theme }) => theme.palette.blacks[2]};
+  color: ${({ theme }) => theme.palette.text};
 `
 
 const TypographyVariants = {
