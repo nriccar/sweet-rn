@@ -21,7 +21,7 @@ export const getAvailableLanguages = (): string[] =>
 
 export const getLanguage = (): string => locales.getLanguage()
 
-type LocalesKeys = keyof typeof locales
+export type LocalesKeys = keyof typeof locales
 
 export const translate = (key: LocalesKeys, params?: string[]) => {
   if (Array.isArray(locales)) {
