@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { render } from '@testing-library/react-native'
+import { fireEvent, render } from '@testing-library/react-native'
 
 import App from '@swrn/screens/app'
 import StylesProvider from '@swrn/style'
 
-import { translate } from '@swrn/locale'
+import { translate, changeLanguage } from '@swrn/locale'
 
 jest.mock('@react-native-async-storage/async-storage', () => {
   return {
@@ -17,6 +17,7 @@ jest.mock('@react-native-async-storage/async-storage', () => {
 jest.mock('react-native-localization')
 jest.mock('@swrn/locale', () => ({
   translate: jest.fn(),
+  changeLanguage: jest.fn(),
 }))
 
 afterEach(() => {
@@ -35,7 +36,12 @@ it('translations works', () => {
   const translateMock = translate as jest.MockedFunction<typeof translate>
   translateMock.mockImplementation(jest.fn())
 
-  render(
+  const changeLanguageMock = changeLanguage as jest.MockedFunction<
+    typeof changeLanguage
+  >
+  changeLanguageMock.mockImplementation(jest.fn())
+
+  const { getByText } = render(
     <StylesProvider>
       <App />
     </StylesProvider>,
@@ -45,4 +51,7 @@ it('translations works', () => {
   expect(translateMock).toHaveBeenCalledWith('welcome')
   expect(translateMock).toHaveBeenCalledWith('app_name')
   expect(translateMock).toHaveBeenCalledWith('description')
+
+  fireEvent.press(getByText(/español/i))
+  expect(changeLanguage).toHaveBeenCalledTimes(1)
 })
