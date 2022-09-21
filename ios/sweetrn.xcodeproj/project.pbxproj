@@ -578,7 +578,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.biofoton;
+				PRODUCT_BUNDLE_IDENTIFIER = sweetrn;
 				PRODUCT_NAME = sweetrn;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -604,7 +604,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.biofoton;
+				PRODUCT_BUNDLE_IDENTIFIER = sweetrn;
 				PRODUCT_NAME = sweetrn;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
