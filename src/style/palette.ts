@@ -17,6 +17,8 @@ const defaultPalette = {
     'rgba(0,0,0,.1)',
   ],
 
+  themeIcons: { light: ['#f5dd4b', '#E5E5E5'], dark: ['#767577', '#828080'] },
+
   success: '#33cd5f',
   warning: '#ff5a00',
   error: '#ef473a',

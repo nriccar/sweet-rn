@@ -73,7 +73,7 @@ const App: React.FC<AppProps> = (): JSX.Element => {
           thumbImages={[sun, moon]}
           onSwitch={handleThemeChange}
           trackColors={['#767577', '#f5dd4b']}
-          thumbColors={['#767577', '#f4f3f4']}
+          thumbColors={['#ffffff', '#828080']}
         />
 
         <LanguagesContainer>

@@ -51,8 +51,10 @@ Before starting, please make sure you have the [environment set up for react-nat
 
 #### Clone project
 
+`create-sweetrn` cli will guide you trought the steps to create your project. You will be able to choose the project name and a custom package bundle id (optional).
+
 ```sh
-git clone https://github.com/nriccar/sweet-rn.git
+npx create-sweetrn
 ```
 
 #### Install dependencies
