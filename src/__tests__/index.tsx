@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { fireEvent, render } from '@testing-library/react-native'
 
-import App from '@swrn/screens/app'
-import StylesProvider from '@swrn/style'
+import App from '@app/screens/app'
+import StylesProvider from '@app/style'
 
-import { translate, changeLanguage } from '@swrn/locale'
+import { translate, changeLanguage } from '@app/locale'
 
 jest.mock('@react-native-async-storage/async-storage', () => {
   return {
@@ -15,7 +15,7 @@ jest.mock('@react-native-async-storage/async-storage', () => {
 })
 
 jest.mock('react-native-localization')
-jest.mock('@swrn/locale', () => ({
+jest.mock('@app/locale', () => ({
   translate: jest.fn(),
   changeLanguage: jest.fn(),
 }))

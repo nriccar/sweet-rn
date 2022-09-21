@@ -5,15 +5,15 @@ import styled from 'styled-components/native'
 import { AnyStyledComponent } from 'styled-components'
 import { StackScreenProps } from '@react-navigation/stack'
 
-import { changeLanguage, translate } from '@swrn/locale'
-import { useLanguage } from '@swrn/contexts/language'
-import { useTheme } from '@swrn/contexts/theme'
+import { changeLanguage, translate } from '@app/locale'
+import { useLanguage } from '@app/contexts/language'
+import { useTheme } from '@app/contexts/theme'
 
-import Typography from '@swrn/components/typography'
-import Switch from '@swrn/components/switch'
+import Typography from '@app/components/typography'
+import Switch from '@app/components/switch'
 
-import sun from '@swrn/assets/icons/sun.png'
-import moon from '@swrn/assets/icons/moon.png'
+import sun from '@app/assets/icons/sun.png'
+import moon from '@app/assets/icons/moon.png'
 
 type AppProps = {
   navigation?: StackScreenProps<{ App: {} }, 'App'>['navigation']
@@ -53,8 +53,8 @@ const App: React.FC<AppProps> = (): JSX.Element => {
 
   const rocket =
     theme === 'light'
-      ? require('@swrn/assets/lottie/rocket.json')
-      : require('@swrn/assets/lottie/rocket_dark.json')
+      ? require('@app/assets/lottie/rocket.json')
+      : require('@app/assets/lottie/rocket_dark.json')
 
   return (
     <Container>

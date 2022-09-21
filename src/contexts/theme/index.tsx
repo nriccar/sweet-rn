@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { useAsyncStorage } from '@swrn/hooks/useLocalStorage'
+import { useAsyncStorage } from '@app/hooks/useLocalStorage'
 
 export type Theme = 'light' | 'dark'
 

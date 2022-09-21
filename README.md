@@ -72,7 +72,7 @@ pod install
 
 ## Imports
 
-Absolute imports are configured in `tsconfig.json` and `babel.config.js`. You can import whatever you want from `src` folder using the alias `@swrn` - `@swrn/components` for example.
+Absolute imports are configured in `tsconfig.json` and `babel.config.js`. You can import whatever you want from `src` folder using the alias `@app` - `@app/components` for example.
 If you want to change this alias, refer to `tsconfig.json` and `babel.config.js` file.
 
 ## Languages
@@ -90,7 +90,7 @@ The translate function - `src/locale` - is a simple function that receives a key
 }
 
 //
-import { translate } from '@swrn/locale'
+import { translate } from '@app/locale'
 const text = translate('hello_world') // Hello World!
 ```
 
@@ -107,7 +107,7 @@ The translate function also accepts params, so that the translations can be more
 }
 
 //
-import { translate } from '@swrn/locale'
+import { translate } from '@app/locale'
 const text = translate('hello_user_with_age', ['there', 'app_name']) // Hello there, do you like Sweet React Native already?
 ```
 
@@ -118,8 +118,8 @@ Note that the params are an array of string of keys which refer to a translation
 You may change the language of the app by using the `useLanguage` hook. This hook returns a function that receives a string with the language code and changes the language of the app.
 
 ```js
-import { changeLanguage, translate } from '@swrn/locale'
-import { useLanguage } from '@swrn/contexts/language'
+import { changeLanguage, translate } from '@app/locale'
+import { useLanguage } from '@app/contexts/language'
 
 [...]
 
@@ -138,14 +138,14 @@ A fix for using just the hook is on the way. For now, you will have to use the `
 You may get the current language of the app by using the `getLanguage` function from `src/locale`.
 
 ```js
-import { getLanguage } from '@swrn/locale'
+import { getLanguage } from '@app/locale'
 const currentLanguage = getLanguage() // en
 ```
 
 Also, there's a `getAvailableLanguages` function that returns an array of strings with the available languages.
 
 ```js
-import { getAvailableLanguages } from '@swrn/locale'
+import { getAvailableLanguages } from '@app/locale'
 const availableLanguages = getAvailableLanguages() // [en, es]
 ```
 
@@ -155,7 +155,7 @@ The dark-light theme is configured using the `useTheme` hook. This hook returns 
 
 ```js
 
-import { useTheme } from '@swrn/contexts/theme'
+import { useTheme } from '@app/contexts/theme'
 
 [...]
 
@@ -167,10 +167,10 @@ You will find the palettes for each theme on `src/style/palette`. Note that ther
 There's also an example of a Switch component on `src/screens/app`.
 
 ```jsx
-import Switch from '@swrn/components/switch'
+import Switch from '@app/components/switch'
 
-import sun from '@swrn/assets/icons/sun.png'
-import moon from '@swrn/assets/icons/moon.png'
+import sun from '@app/assets/icons/sun.png'
+import moon from '@app/assets/icons/moon.png'
 
 [...]
 

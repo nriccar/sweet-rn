@@ -1,4 +1,4 @@
-import { changeLanguage } from '@swrn/locale'
+import { changeLanguage } from '@app/locale'
 import React, { createContext, useEffect, useState } from 'react'
 import { LayoutAnimation } from 'react-native'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components/native'
 
-import { useTheme } from '@swrn/contexts/theme'
+import { useTheme } from '@app/contexts/theme'
 
 import { palette } from './palette'
 import { StatusBar } from 'react-native'
