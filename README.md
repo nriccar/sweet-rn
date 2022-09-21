@@ -36,7 +36,6 @@
 
 - [Installation](#installation)
 - [Run project](#run-project)
-- [Rename the project](#renaming-project)
 - [Imports](#imports)
 - [Languages](#languages)
   - [Translate function](#translate-function)
@@ -70,13 +69,6 @@ pod install
 #### Available Scripts
 
 - npm start - start metro bundler (react-native start)
-
-## Renaming project
-
-If you want to rename the packages of the project, I recommend using [react-native-rename](https://github.com/junedomingo/react-native-rename).
-One of the tickets on the roadmap of this template is adding it as a template to the react-native cli command, so that you can `npx react-native init myPackageName --template sweet-rn`.
-
-For the time being, just rename with react-native-rename and you will be good to go.
 
 ## Imports
 
@@ -205,6 +197,5 @@ const handleThemeChange = (value: boolean) => {
 
 ## 🚧 Roadmap 🚧
 
-- Add to the react-native cli command, so that you can `npx react-native init myPackageName --template sweet-rn`.
 - Fix the `useLanguage` hook, so that it doesn't require the `changeLanguage` function.
 - Document providers, context, hooks, components, eslint, husky, prettier.
