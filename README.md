@@ -7,9 +7,13 @@
   Sweet React Native is a template for react native featuring Multi-language, Dark-Light Themes, <br> Typescript, Context, Styled Components, Jest, Detox, Eslint, Husky, Prettier, and more.
 </p>
 
-<br>
 <div align="center">
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" width="100" />
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" />
+  <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" />
+  <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" />
 </div>
 <br>
 <p align="center">
@@ -23,13 +27,12 @@
 
 <br>
 <br>
-<p align="center">
-    🚧
-    <br>
-    This project is under construction, PRs and suggestions<br>are always welcome.
-    <br>
-     🚧
-</p>
+  <div align="center">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" width="100" />
+  </div>
+  <p align="center">
+    PRs and suggestions are always welcome.
+  </p>
 <br>
 
 ## 📚 Table of Contents
