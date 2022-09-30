@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "@app/*": ["src/*/index", "src/*", "src/*/*"]
+      "@app/*": ["src/*/index", "src/*"]
     },
     "noEmit": true,
     "resolveJsonModule": true,
