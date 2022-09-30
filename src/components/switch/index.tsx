@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { LayoutAnimation } from 'react-native'
+import { LayoutAnimation, Platform } from 'react-native'
 
 import styled from 'styled-components/native'
 
@@ -33,7 +33,7 @@ const Switch: React.FC<SwitchProps> = ({
         value={isEnabled}
       />
 
-      {thumbImages ? (
+      {thumbImages && Platform.OS === 'ios' ? (
         <ThumbImageButton onPress={toggleSwitch} {...{ isEnabled }}>
           <ThumbImage source={isEnabled ? thumbImages[0] : thumbImages[1]} />
         </ThumbImageButton>
