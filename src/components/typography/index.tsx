@@ -41,7 +41,7 @@ const TypographyVariants = {
 
 type TypographyProps = {
   variant: keyof typeof TypographyVariants
-  children: string
+  children: string | string[]
   className?: string
   [rest: string]: any
 }
