@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/nriccar/sweet-rn"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
   "scripts": {
     "adb": "adb reverse tcp:8081 tcp:8081",
