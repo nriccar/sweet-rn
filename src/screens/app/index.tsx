@@ -14,6 +14,7 @@ import Switch from '@app/components/switch'
 
 import sun from '@app/assets/icons/sun.png'
 import moon from '@app/assets/icons/moon.png'
+import Button from '@app/components/button'
 
 type AppProps = {
   navigation?: StackScreenProps<{ App: {} }, 'App'>['navigation']
@@ -79,11 +80,10 @@ const App: React.FC<AppProps> = (): JSX.Element => {
         <LanguagesContainer>
           {languages.map(({ value, label }) => (
             <LanguageButton
+              text={label}
               key={`app-languages-button-${label}`}
               onPress={() => handleLanguageChange(value as 'en' | 'es')}
-            >
-              <LanguageText variant="button">{label}</LanguageText>
-            </LanguageButton>
+            />
           ))}
         </LanguagesContainer>
       </ButtonsContainer>
@@ -132,16 +132,6 @@ const LanguagesContainer = styled.View`
   margin-bottom: 30px;
 `
 
-const LanguageButton = styled.TouchableOpacity`
-  margin: 0 20px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  background-color: ${({ theme }) => theme.palette.brand[0]};
-  box-shadow: 0 3px 5px ${({ theme }) => theme.palette.blacks[5]};
-`
-
-const LanguageText = styled(Typography)`
-  color: ${({ theme }) => theme.palette.whites[0]};
-`
+const LanguageButton = styled(Button)``
 
 export default App
