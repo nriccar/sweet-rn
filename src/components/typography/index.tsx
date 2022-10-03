@@ -41,7 +41,7 @@ const TypographyVariants = {
 
 type TypographyProps = {
   variant: keyof typeof TypographyVariants
-  children: JSX.Element
+  children: string
   className?: string
   [rest: string]: any
 }
